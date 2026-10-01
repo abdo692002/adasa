@@ -1,0 +1,96 @@
+<nav class="bg-main-color w-full z-50 border-default sticky top-0">
+  <div class="max-w-screen-xl relative flex flex-wrap items-center justify-between mx-auto p-4">
+    <!-- Desktop: Start Reading + Search -->
+    <a href="#" class="hidden md:flex items-center gap-6 mr-auto">
+      <span class="text-white px-6 py-3 rounded-full bg-[#EE5F0E] font-bold"> ابدأ القراءة </span>
+
+      <i class="fa-solid fa-magnifying-glass text-secondColor"></i>
+    </a>
+
+    <!-- Mobile: Hamburger -->
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondColor rounded-base md:hidden"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M5 7h14M5 12h14M5 17h14"
+        />
+      </svg>
+    </button>
+
+    <!-- Navigation -->
+    <div
+      class="hidden w-full md:block md:w-auto md:absolute md:left-1/2 md:-translate-x-1/2"
+      id="navbar-default"
+    >
+      <div class="w-full flex flex-col items-center gap-3">
+        <!-- Mobile: Start Reading -->
+        <a href="#" class="flex md:hidden w-full justify-center">
+          <span class="w-full text-center text-white px-6 py-3 rounded-full bg-[#EE5F0E] font-bold">
+            ابدأ القراءة
+          </span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul
+          class="w-full font-medium flex flex-col items-center gap-2 px-3 py-2 border border-secondColor rounded-full bg-mainColor md:w-auto md:flex-row md:gap-4"
+        >
+          <li>
+            <a
+              routerLink="/fromUs"
+              routerLinkActive="active"
+              class="block w-full text-center text-secondColor px-3 py-2 rounded hover:text-white md:w-auto md:py-0"
+            >
+              من نحن
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/blog"
+              routerLinkActive="active"
+              class="block w-full text-center text-secondColor px-3 py-2 rounded hover:text-white md:w-auto md:py-0"
+            >
+              المدونة
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/home"
+              routerLinkActive="active"
+              class="block w-full text-center text-secondColor px-3 py-2 rounded hover:text-white md:w-auto md:py-0"
+            >
+              الرئيسية
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="absolute right-8 top-8 -translate-y-1/2 text-white flex justify-center">
+      <div class="flex flex-col justify-start">
+        <p class="text-2xl ml-auto">عدسة</p>
+        <p class="text-[#C66C08]">عالم التصوير الفوتوغرافي</p>
+      </div>
+    </div>
+  </div>
+</nav>
