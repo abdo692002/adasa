@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './blog.html',
   styleUrl: './blog.css',
 })
-export class Blog {}
+export class Blog {
+
+}

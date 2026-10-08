@@ -1,0 +1,35 @@
+/* Component-level styles for FromUs (About Page) */
+
+.stat-card, .value-card, .team-card {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover, .value-card:hover {
+  transform: translateY(-4px);
+}
+
+.team-card {
+  backdrop-filter: blur(12px);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(241, 101, 17, 0.15);
+}
+
+/* Custom glow animations */
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.ambient-glow {
+  animation: ambientPulse 8s infinite ease-in-out;
+}

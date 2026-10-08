@@ -1,0 +1,89 @@
+@if (post) {
+  <article class="bg-[#0A0A0A] text-white min-h-screen py-12 px-4 sm:px-6 lg:px-8 dir-rtl" dir="rtl">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Back Navigation & Category Tag -->
+      <div class="flex items-center justify-between mb-8">
+        <a routerLink="/home" class="inline-flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors duration-200">
+          <i class="fa-solid fa-arrow-right"></i>
+          <span>العودة للمقالات</span>
+        </a>
+        <span class="bg-orange-500/10 text-orange-500 border border-orange-500/20 text-sm font-medium px-4 py-1.5 rounded-full">
+          {{ post.category }}
+        </span>
+      </div>
+
+      <!-- Main Article Header -->
+      <header class="mb-10 text-right">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+          {{ post.title }}
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+          {{ post.excerpt }}
+        </p>
+
+        <!-- Author Meta & Read Info -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-gray-800">
+          <div class="flex items-center gap-4">
+            <img [src]="post.author.avatar" [alt]="post.author.name" class="w-12 h-12 rounded-full object-cover border-2 border-orange-500/30" />
+            <div class="text-right">
+              <h4 class="font-semibold text-white text-base">{{ post.author.name }}</h4>
+              <p class="text-xs text-gray-400">{{ post.author.role }}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 text-sm text-gray-400">
+            <span class="flex items-center gap-2">
+              <i class="fa-regular fa-calendar text-orange-500"></i>
+              {{ post.date }}
+            </span>
+            <span class="flex items-center gap-2">
+              <i class="fa-regular fa-clock text-orange-500"></i>
+              {{ post.readTime }}
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Main Image -->
+      <div class="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-gray-800/80">
+        <img [src]="post.image" [alt]="post.title" class="w-full h-[350px] sm:h-[450px] object-cover" />
+      </div>
+
+      <!-- Article Body Content -->
+      <div class="prose prose-invert prose-orange max-w-none text-gray-200 text-lg leading-relaxed space-y-6 text-right whitespace-pre-line">
+        {{ post.content }}
+      </div>
+
+      <!-- Article Footer Tags & Actions -->
+      <footer class="mt-12 pt-8 border-t border-gray-800">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm text-gray-400 ml-2">الوسوم:</span>
+            @for (tag of post.tags; track tag) {
+              <span class="bg-gray-800/80 hover:bg-gray-700 text-gray-300 text-xs px-3 py-1.5 rounded-lg transition-colors cursor-pointer">
+                #{{ tag }}
+              </span>
+            }
+          </div>
+
+          <!-- Share buttons placeholder -->
+          <div class="flex items-center gap-3">
+            <span class="text-sm text-gray-400">مشاركة:</span>
+            <button class="w-9 h-9 rounded-full bg-gray-800 hover:bg-orange-500 text-gray-300 hover:text-white transition-colors flex items-center justify-center">
+              <i class="fa-brands fa-twitter"></i>
+            </button>
+            <button class="w-9 h-9 rounded-full bg-gray-800 hover:bg-orange-500 text-gray-300 hover:text-white transition-colors flex items-center justify-center">
+              <i class="fa-brands fa-facebook-f"></i>
+            </button>
+            <button class="w-9 h-9 rounded-full bg-gray-800 hover:bg-orange-500 text-gray-300 hover:text-white transition-colors flex items-center justify-center">
+              <i class="fa-solid fa-link"></i>
+            </button>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </article>
+}

@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { Post } from '../post';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
 
-  posts: object[] =  [
+  posts: Post[] =  [
     {
       "id": 1,
       "slug": "mastering-golden-hour-photography",
@@ -514,7 +517,10 @@ export class Home {
       "tags": ["بساطة", "Minimalist", "تكوين"]
     }
   ];
+  test(){
 
+    console.log("Articles loaded:");
+  }
 
 
 }
